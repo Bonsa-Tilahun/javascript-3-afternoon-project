@@ -10,12 +10,12 @@
 
 // Do not edit the code below.
 var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
-  year: 1994
-}
-// Do not edit the code above.
+        color: 'red',
+        make: 'toyota',
+        model: 'tacoma',
+        year: 1994
+    }
+    // Do not edit the code above.
 
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
@@ -23,7 +23,7 @@ var carDetails = {
 
 //Code Here
 
-
+const { color, make, model, year } = carDetails
 
 ////////// PROBLEM 2 //////////
 
@@ -33,12 +33,12 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
-  //Code Here
-  
-  // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
-  // Do not edit the code above.
+function greeting(obj) {
+    //Code Here
+    const { firstName, lastName, title } = obj
+    // Do not edit the code below.
+    return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
+    // Do not edit the code above.
 }
 
 
@@ -55,7 +55,10 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function totalPopulation(obj) {
+    const { utah, california, texas, arizona } = obj
+    return utah + california + texas + arizona
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -68,7 +71,14 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function ingredients(obj) {
+    let arr = []
+    const { carb, fat, protein } = obj
+    arr.push(carb)
+    arr.push(fat)
+    arr.push(protein)
+    return arr
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -87,7 +97,19 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function largeNumbers({ first, second, third }) {
+    console.log(first, second, third)
+    if (first < second && first < third) {
+        console.log(first)
+        return first
+    } else if (second < first && second < third) {
+        console.log(second)
+        return second
+    } else {
+        console.log(third)
+        return third
+    }
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -99,4 +121,12 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function numberGroups({ a, b, c }) {
+    if (a.length > b.length && a.length > c.length) {
+        return a
+    } else if (b.length > a.length && b.length > c.length) {
+        return b
+    } else {
+        return c
+    }
+}
